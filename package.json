@@ -17,5 +17,9 @@
     "mkdirp": "^0.5.1",
     "split": "^1.0.0",
     "through2": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:AshCoolman/text-embed.git"
   }
 }

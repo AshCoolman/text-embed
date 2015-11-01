@@ -1,3 +1,3 @@
 require('coffee-script/register');
-require('babel/register');
-require('./app')();
+require('babel-core/register');
+require('../src/app')();

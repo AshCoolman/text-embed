@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepublish": "babel-node ./src/rollup.js",
-    "test": "mkdir -p ./test/.tmp && babel-node ./test/index.js ./test/input.md ./test/.tmp/output.md '--text-embed:'"
+    "test": "mkdir -p ./test/.tmp && babel-node ./src/index.js ./test/input.md ./test/.tmp/output.md '--text-embed:'"
   },
   "author": "Ashley Coleman <writetofish@gmail.com> (http://ashcoolman.com)",
   "license": "ISC",

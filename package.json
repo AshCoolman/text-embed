@@ -21,6 +21,9 @@
     "split": "^1.0.0",
     "through2": "^2.0.0"
   },
+  "engine":  {
+    "node" : ">=4.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "github.com:AshCoolman/text-embed.git"

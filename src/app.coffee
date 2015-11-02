@@ -1,5 +1,5 @@
 module.exports = () ->
-    
+    EOL = require('os').EOL
     fs = require 'fs'
     fsEx = require 'fs-extra'
     split = require 'split'
@@ -18,14 +18,14 @@ module.exports = () ->
             write = (chunk, encoding, next) ->
                 chunk = chunk.toString()
                 if chunk.startsWith cursor
-                    embedLoc = chunk.split(cursor).join ''
+                    embedLoc = chunk.split(cursor).join('')
                     [ fileName, lines ] = embedLoc.split '::lines:'
                     [ firstLine, lastLine ] = lines.split '-'
                     allLines = fs.readFileSync fileName, 'utf8'
-                    embedLines = allLines.split('\n').splice firstLine - 1, lastLine - 1
-                    @push embedLines.join('\n') + '\n'
+                    embedLines = allLines.split(EOL).slice (+firstLine) - 1, (+lastLine)
+                    @push embedLines.join(EOL) + EOL
                 else
-                    @push chunk + '\n'
+                    @push chunk + EOL
                 next()
                 return null
 

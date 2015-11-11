@@ -3,7 +3,7 @@ require('fs').unlink('./.tmp/app.js', function () {
   // transpile coffeescript
   require('child_process').exec(`mkdir -p .tmp && coffee -c -o .tmp/ src/`, function (error, stdout, stderr) {
     // perform rollup
-    require('sys').puts(stdout);
+    require('util').puts(stdout);
     require( 'rollup' )
       .rollup({ entry: './.tmp/app.js'})
       .then( function ( bundle ) {
